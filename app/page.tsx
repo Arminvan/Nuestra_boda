@@ -10,7 +10,7 @@ export default function Home() {
         {/* Imagen de fondo floral azul y dorado */}
         {/* Asegúrate de tener tu imagen en public/invitacion_azul.webp */}
         <Image 
-          src="/invitacion_azul.webp" 
+          src="/invita.png" 
           alt="Invitación Boda Floral Isabel y Sebastian" 
           fill 
           priority 
