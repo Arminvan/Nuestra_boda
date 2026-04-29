@@ -1,26 +1,53 @@
-@import "tailwindcss";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Paleta basada en tu diseño floral */
+  --color-primary: #2c5282;   /* Azul profundo (floral) */
+  --color-accent: #bfa071;    /* Dorado (detalles) */
+  --bg-cream: #fcfaf0;        /* Fondo crema suave */
+  
+  /* Tipografía */
+  --font-serif: 'Playfair Display', serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-cream);
+  color: #333;
+  font-family: var(--font-serif);
+}
+
+/* Efecto de desenfoque para el formulario sobre la imagen */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Animaciones suaves */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Ajustes para el botón principal */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #1a365d;
+}
+
+/* Ajustes para los selectores de cantidad */
+.counter-style {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
 }

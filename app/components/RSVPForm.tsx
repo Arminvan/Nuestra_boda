@@ -10,7 +10,6 @@ export default function RSVPForm() {
   const [success, setSuccess] = useState(false);
 
   const handleConfirm = async () => {
-    // Validaciones básicas
     if (!name.trim()) {
       alert("Por favor, ingresa tu nombre.");
       return;
@@ -35,22 +34,22 @@ export default function RSVPForm() {
 
   if (success) {
     return (
-      <div className="bg-white/90 p-8 rounded-2xl shadow-xl w-full max-w-sm text-center backdrop-blur-sm">
-        <h2 className="text-2xl font-bold text-[#bfa071] mb-2">¡Gracias!</h2>
+      <div className="bg-white/90 p-8 rounded-2xl shadow-xl w-full max-w-sm text-center animate-fade-in glass-effect">
+        <h2 className="text-2xl font-bold text-[#2c5282] mb-2">¡Gracias!</h2>
         <p className="text-gray-700">Tu asistencia ha sido confirmada.</p>
       </div>
     );
   }
 
   return (
-    <div className="bg-white/90 p-6 rounded-2xl shadow-xl w-full max-w-sm backdrop-blur-sm">
-      <h3 className="text-center font-serif italic text-lg text-[#bfa071] mb-4">
+    <div className="bg-white/90 p-6 rounded-2xl shadow-xl w-full max-w-sm animate-fade-in glass-effect">
+      <h3 className="text-center font-serif italic text-lg text-[#2c5282] mb-4">
         ¿Cuántos asistirán?
       </h3>
       
       <input 
         type="text"
-        className="w-full p-3 mb-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#bfa071]"
+        className="w-full p-3 mb-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#2c5282]"
         placeholder="Nombre del invitado"
         value={name}
         onChange={(e) => setName(e.target.value)}
@@ -60,15 +59,15 @@ export default function RSVPForm() {
       <div className="flex justify-center items-center gap-6 mb-6">
         <button 
           onClick={() => setCount(Math.max(1, count - 1))} 
-          className="w-10 h-10 border-2 border-[#bfa071] text-[#bfa071] rounded-full flex items-center justify-center hover:bg-[#bfa071] hover:text-white transition-colors"
+          className="w-10 h-10 border-2 counter-style rounded-full flex items-center justify-center hover:bg-[#2c5282] hover:text-white transition-colors"
           disabled={loading}
         >
           -
         </button>
-        <span className="text-3xl font-serif text-[#bfa071] w-12 text-center">{count}</span>
+        <span className="text-3xl font-serif text-[#2c5282] w-12 text-center">{count}</span>
         <button 
           onClick={() => setCount(Math.min(10, count + 1))} 
-          className="w-10 h-10 border-2 border-[#bfa071] text-[#bfa071] rounded-full flex items-center justify-center hover:bg-[#bfa071] hover:text-white transition-colors"
+          className="w-10 h-10 border-2 counter-style rounded-full flex items-center justify-center hover:bg-[#2c5282] hover:text-white transition-colors"
           disabled={loading}
         >
           +
@@ -78,8 +77,8 @@ export default function RSVPForm() {
       <button 
         onClick={handleConfirm}
         disabled={loading}
-        className={`w-full py-3 rounded-full font-bold text-white transition-all ${
-          loading ? "bg-gray-400 cursor-not-allowed" : "bg-[#bfa071] hover:bg-[#a68b60]"
+        className={`w-full py-3 rounded-full font-bold text-white transition-all btn-primary ${
+          loading ? "opacity-50 cursor-not-allowed" : ""
         }`}
       >
         {loading ? "Enviando..." : "Confirmar Asistencia"}
