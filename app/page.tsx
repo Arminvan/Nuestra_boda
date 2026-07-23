@@ -12,7 +12,7 @@ export default function Home() {
         {/* Contenedor de la imagen con altura fija para que no tape el formulario */}
         <div className="relative w-full h-[550px]">
           <Image 
-            src="/public/Gemini_Generated_Image_qvu2pvqvu2pvqvu2.png" 
+            src="/Gemini_Generated_Image_qvu2pvqvu2pvqvu2.png" 
             alt="Invitación Boda Floral Isabel y Sebastian" 
             fill 
             priority 
